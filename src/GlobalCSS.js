@@ -89,4 +89,62 @@ export const styles = StyleSheet.create({
   inputContainer: {
     padding: 20,
   },
+
+  hospitalsTopStyle: {
+    borderRadius: 5,
+    borderColor: "#4B91F1",
+    borderWidth: 1,
+    marginTop: 50,
+    width: "80%",
+    height: 45,
+    alignSelf: "center",
+    backgroundColor: "#ffffff",
+    justifyContent: "center",
+  },
+
+  hospitalsTopStyleText: {
+    fontSize: 16,
+    fontWeight: "bold",
+    textAlign: "center",
+    color: "#4B91F1",
+  },
+
+  ClinicsContainer: {
+    flex: 1,
+    backgroundColor: "#ffffff",
+  },
+
+  ClinicsContainer: {
+    flex: 1,
+    flexDirection: "row",
+    flexWrap: "wrap",
+    justifyContent: "center",
+    alignItems: "center",
+    marginTop: 50,
+  },
+
+  clinicsGridContainer: {
+    width: "38%",
+    height: 130,
+    margin: 10,
+    borderRadius: 5,
+    backgroundColor: "#4B91F1",
+    borderWidth: 1,
+    borderColor: "#4B91F1",
+    justifyContent: "center",
+  },
+
+  clinicsFlexText: {
+    fontSize: 16,
+    fontWeight: "bold",
+    textAlign: "center",
+    color: "#ffffff",
+  },
+
+  viewIconStyle: {
+    height: 100,
+    marginTop: 10,
+    alignItems: "center",
+    justifyContent: "center",
+  },
 });
