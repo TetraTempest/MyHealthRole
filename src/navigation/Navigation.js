@@ -3,7 +3,8 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import GetStarted from "../pages/GetStarted.js";
 import Login from "../pages/Login.js";
-import Clinics from "../pages/Clinics.js";
+import BottomNavigation from "./BottomNavigation";
+
 const Stack = createNativeStackNavigator();
 
 const Navigation = () => {
@@ -16,10 +17,11 @@ const Navigation = () => {
         <Stack.Screen name="Login" options={{ headerShown: false }}>
           {() => <Login />}
         </Stack.Screen>
+
         <Stack.Screen
           name="Clinics"
-          component={Clinics}
-          options={{ headerShown: false }}
+          component={BottomNavigation}
+          options={{ header: () => null }}
         />
       </Stack.Navigator>
     </NavigationContainer>
