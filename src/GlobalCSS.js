@@ -147,4 +147,13 @@ export const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
   },
+
+  tabNavigationStyle: {
+    bottom: 0,
+    left: 0,
+    height: 60,
+    right: 0,
+    elevation: 0,
+    paddingTop: 10,
+  },
 });

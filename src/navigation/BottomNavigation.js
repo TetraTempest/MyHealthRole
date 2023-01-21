@@ -1,45 +1,89 @@
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import Clinics from "../pages/Clinics";
+import Settings from "../pages/Settings";
 import AntDesign from "react-native-vector-icons/AntDesign";
+import Fontisto from "react-native-vector-icons/Fontisto";
 import { styles } from "../GlobalCSS";
-i;
+import { View } from "react-native";
+import MyAppointments from "../pages/MyAppointments";
 
 const Tab = createBottomTabNavigator();
 
 const BottomNavigation = () => {
   return (
-    <Tab.Navigator
-      screenOptions={{
-        tabBarStyle: {
-          bottom: 0,
-          left: 0,
-          height: 60,
-          right: 0,
-          elevation: 0,
-          paddingTop: 10,
-          backgroundColor: "#104728",
-        },
+    <View
+      style={{
+        position: "relative",
+        paddingTop: 20,
+        height: 60,
+        flex: 1,
+        width: "100%",
       }}
     >
-      <Tab.Screen
-        name="Clinics"
-        options={{
-          tabBarLabel: "",
-          headerShown: false,
-          tabBarIcon: ({ focused }) => (
-            <View style={styles.viewIconStyle}>
-              <AntDesign
-                name="home"
-                size={30}
-                color={focused ? "#FFFFFF" : "#748c94"}
-              />
-            </View>
-          ),
+      <Tab.Navigator
+        screenOptions={{
+          tabBarStyle: {
+            ...styles.tabNavigationStyle,
+            ...styles.primaryColor,
+          },
         }}
-        component={Clinics}
-      />
-    </Tab.Navigator>
+      >
+        <Tab.Screen
+          name="Home"
+          options={{
+            tabBarLabel: "",
+            headerShown: false,
+            tabBarIcon: ({ focused }) => (
+              <View style={styles.viewIconStyle}>
+                <AntDesign
+                  name="home"
+                  size={30}
+                  color={focused ? "#FFFFFF" : "#000000"}
+                />
+              </View>
+            ),
+          }}
+          component={Clinics}
+        />
+
+        <Tab.Screen
+          name="MyAppointments"
+          options={{
+            tabBarLabel: "",
+            headerShown: false,
+            tabBarIcon: ({ focused }) => (
+              <View style={styles.viewIconStyle}>
+                <Fontisto
+                  name="prescription"
+                  size={30}
+                  color={focused ? "#FFFFFF" : "#000000"}
+                />
+              </View>
+            ),
+          }}
+          component={MyAppointments}
+        />
+
+        <Tab.Screen
+          name="Settings"
+          options={{
+            tabBarLabel: "",
+            headerShown: false,
+            tabBarIcon: ({ focused }) => (
+              <View style={styles.viewIconStyle}>
+                <AntDesign
+                  name="setting"
+                  size={30}
+                  color={focused ? "#FFFFFF" : "#000000"}
+                />
+              </View>
+            ),
+          }}
+          component={Settings}
+        />
+      </Tab.Navigator>
+    </View>
   );
 };
 
