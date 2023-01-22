@@ -34,7 +34,6 @@ const Clinics = ({ route }) => {
   ]);
 
   const handleCreateAppointment = () => {
-    //
     navigation.navigate("CreateAppointment");
   };
 
