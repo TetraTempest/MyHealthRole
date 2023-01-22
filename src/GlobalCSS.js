@@ -109,13 +109,23 @@ export const styles = StyleSheet.create({
     color: "#4B91F1",
   },
 
-  ClinicsContainer: {
-    flex: 1,
-    backgroundColor: "#ffffff",
+  hospitalsAppointmentStyle: {
+    marginTop: 40,
+    marginBottom: 20,
+    width: "100%",
+    alignSelf: "center",
+  },
+
+  hospitalsAppTopStyleText: {
+    fontSize: 27,
+    fontWeight: "bold",
+    textAlign: "center",
+    color: "#4B91F1",
   },
 
   ClinicsContainer: {
     flex: 1,
+    backgroundColor: "#ffffff",
     flexDirection: "row",
     flexWrap: "wrap",
     justifyContent: "center",
@@ -155,5 +165,70 @@ export const styles = StyleSheet.create({
     right: 0,
     elevation: 0,
     paddingTop: 10,
+  },
+
+  mapContainer: {
+    height: 300,
+    width: 410,
+    justifyContent: "flex-end",
+    alignItems: "center",
+    marginTop: 10,
+  },
+
+  map: {
+    ...StyleSheet.absoluteFillObject,
+  },
+
+  mapImage: {
+    height: 35,
+    width: 22,
+  },
+
+  appointmentContainer: {
+    flex: 1,
+    backgroundColor: "#ffffff",
+    flexDirection: "row",
+    flexWrap: "wrap",
+    justifyContent: "space-around",
+    alignItems: "center",
+    marginTop: 50,
+  },
+
+  appointmentGridBox: {
+    width: "30%",
+    height: 100,
+    margin: 10,
+    borderRadius: 5,
+    backgroundColor: "#4B91F1",
+    justifyContent: "center",
+  },
+
+  appointmentFlexText: {
+    fontSize: 30,
+    fontWeight: "bold",
+    textAlign: "center",
+    color: "#ffffff",
+  },
+
+  cancelContainer: {
+    justifyContent: "center",
+    alignItems: "center",
+    marginTop: 30,
+  },
+
+  cancelButton: {
+    backgroundColor: "#ffffff",
+    borderWidth: 1,
+    borderColor: "red",
+    alignItems: "center",
+    padding: 15,
+    width: 300,
+    borderRadius: 5,
+  },
+
+  cancelText: {
+    fontSize: 22,
+    fontWeight: "bold",
+    color: "red",
   },
 });
