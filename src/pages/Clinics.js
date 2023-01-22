@@ -33,6 +33,11 @@ const Clinics = ({ route }) => {
     },
   ]);
 
+  const handleCreateAppointment = () => {
+    //
+    navigation.navigate("CreateAppointment");
+  };
+
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView nestedScrollEnabled={true}>
@@ -47,6 +52,7 @@ const Clinics = ({ route }) => {
             <TouchableOpacity
               style={styles.clinicsGridContainer}
               key={clinic.id}
+              onPress={handleCreateAppointment}
             >
               <View>
                 <Text style={styles.clinicsFlexText}>{clinic.name}</Text>

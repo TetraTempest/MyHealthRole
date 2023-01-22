@@ -4,6 +4,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import GetStarted from "../pages/GetStarted.js";
 import Login from "../pages/Login.js";
 import BottomNavigation from "./BottomNavigation";
+import CreateAppointment from "../pages/CreateAppointment";
 
 const Stack = createNativeStackNavigator();
 
@@ -21,6 +22,12 @@ const Navigation = () => {
         <Stack.Screen
           name="Clinics"
           component={BottomNavigation}
+          options={{ header: () => null }}
+        />
+
+        <Stack.Screen
+          name="CreateAppointment"
+          component={CreateAppointment}
           options={{ header: () => null }}
         />
       </Stack.Navigator>
