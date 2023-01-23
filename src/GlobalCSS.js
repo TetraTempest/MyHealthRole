@@ -11,6 +11,11 @@ export const styles = StyleSheet.create({
     backgroundColor: "#FFFFFF",
   },
 
+  // Black
+  darkModeColor: {
+    backgroundColor: "#343541",
+  },
+
   container: {
     flex: 1,
     backgroundColor: "#ffffff",
@@ -37,7 +42,7 @@ export const styles = StyleSheet.create({
   text: {
     fontSize: 16,
     fontWeight: "bold",
-    color: "#000000",
+    color: "#343541",
     letterSpacing: 1,
     lineHeight: 20,
   },
@@ -186,7 +191,6 @@ export const styles = StyleSheet.create({
 
   appointmentContainer: {
     flex: 1,
-    backgroundColor: "#ffffff",
     flexDirection: "row",
     flexWrap: "wrap",
     justifyContent: "space-around",
@@ -217,7 +221,6 @@ export const styles = StyleSheet.create({
   },
 
   cancelButton: {
-    backgroundColor: "#ffffff",
     borderWidth: 1,
     borderColor: "red",
     alignItems: "center",
@@ -230,5 +233,89 @@ export const styles = StyleSheet.create({
     fontSize: 22,
     fontWeight: "bold",
     color: "red",
+  },
+
+  appointmentStatus: {
+    fontSize: 17,
+    fontWeight: "bold",
+    textAlign: "center",
+    color: "#FFFFFF",
+  },
+
+  ModalStyle: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    marginTop: 22,
+  },
+
+  ModalViewStyle: {
+    margin: 20,
+    backgroundColor: "white",
+    borderRadius: 5,
+    padding: 35,
+    alignItems: "center",
+    shadowColor: "#343541",
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+    elevation: 5,
+    width: "90%",
+  },
+
+  ModalCloseButtonStyle: {
+    backgroundColor: "#FFFFFF",
+    borderRadius: 20,
+    padding: 10,
+    elevation: 2,
+    width: 50,
+    height: 50,
+    justifyContent: "center",
+    alignItems: "center",
+    position: "absolute",
+    top: -20,
+    right: -20,
+  },
+
+  ModalCloseButtonTextStyle: {
+    fontSize: 20,
+    color: "#343541",
+  },
+
+  ModalImageStyle: {
+    marginTop: 10,
+    width: "100%",
+  },
+
+  ModalImageTextStyle: {
+    width: "100%",
+    height: 50,
+    borderRadius: 10,
+    marginBottom: 10,
+    paddingHorizontal: 20,
+  },
+
+  ModalImageText: {
+    fontSize: 18,
+    color: "#343541",
+    textAlign: "center",
+  },
+
+  confirmCancelBtn: {
+    borderWidth: 1,
+    borderColor: "red",
+    alignItems: "center",
+    padding: 10,
+    borderRadius: 5,
+  },
+
+  confirmCancel: {
+    fontSize: 17,
+    fontWeight: "bold",
+    color: "red",
+    textAlign: "center",
   },
 });

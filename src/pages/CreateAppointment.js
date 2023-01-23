@@ -5,36 +5,63 @@ import {
   ScrollView,
   SafeAreaView,
   Image,
+  Animated,
 } from "react-native";
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { styles } from "../GlobalCSS";
 import MapView, { PROVIDER_GOOGLE, Marker } from "react-native-maps";
-import { useNavigation } from "@react-navigation/native";
-
+import CloseModal from "../components/CloseModal";
 
 const CreateAppointment = () => {
-  const navigation = useNavigation();
+  const [modalVisible, setModalVisible] = useState(false);
+
   const [appointoments, setAppointoments] = useState([
     {
       name: "1",
       id: 1,
+      status: "Processing",
     },
     {
       name: "2",
       id: 2,
+      status: "Pending",
     },
     {
       name: "3",
       id: 3,
+      status: "Pending",
     },
   ]);
 
-  const handleConfirmationModal = () => {
-    // navigation.navigate("Modal");
-  }
-
   const [isApproved, setIsApproved] = useState(true);
 
+  const FadeInView = (props) => {
+    const fadeAnim = useRef(new Animated.Value(0)).current; // Initial value for opacity: 0
+
+    useEffect(() => {
+      const intervalId = setInterval(() => {
+        Animated.timing(fadeAnim, {
+          toValue: 1,
+          duration: 2000,
+          useNativeDriver: true,
+        }).start(() => {
+          fadeAnim.setValue(0);
+        });
+      }, 2000);
+      return () => clearInterval(intervalId);
+    }, []);
+
+    return (
+      <Animated.View // Special animatable View
+        style={{
+          ...props.style,
+          opacity: fadeAnim, // Bind opacity to animated value
+        }}
+      >
+        {props.children}
+      </Animated.View>
+    );
+  };
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView nestedScrollEnabled={true}>
@@ -69,31 +96,47 @@ const CreateAppointment = () => {
         </View>
         <View style={styles.appointmentContainer}>
           {appointoments.map((appointoment) => (
-            <View
-              style={{
-                ...styles.appointmentGridBox,
-                backgroundColor:
-                  isApproved && appointoment.id == 1 ? "green" : "#4B91F1",
-              }}
-              key={appointoment.id}
-            >
-              <View>
-                <Text style={styles.appointmentFlexText}>
-                  {appointoment.name}
-                </Text>
-              </View>
+            <View style={styles.appointmentGridBox} key={appointoment.id}>
+              {isApproved && appointoment.id == 1 ? (
+                <View>
+                  <Text style={styles.appointmentStatus}>
+                    {appointoment.status}
+                  </Text>
+                  <FadeInView>
+                    <View>
+                      <Text style={styles.appointmentFlexText}>
+                        {appointoment.name}
+                      </Text>
+                    </View>
+                  </FadeInView>
+                </View>
+              ) : (
+                <View>
+                  <Text style={styles.appointmentStatus}>
+                    {appointoment.status}
+                  </Text>
+                  <Text style={styles.appointmentFlexText}>
+                    {appointoment.name}
+                  </Text>
+                </View>
+              )}
             </View>
           ))}
         </View>
 
         <View style={styles.cancelContainer}>
-          <TouchableOpacity 
-           style={styles.cancelButton}
-           onPress={handleConfirmationModal}
+          <TouchableOpacity
+            style={styles.cancelButton}
+            onPress={() => setModalVisible(!modalVisible)}
           >
             <Text style={styles.cancelText}>Cancel</Text>
           </TouchableOpacity>
         </View>
+
+        <CloseModal
+          modalVisible={modalVisible}
+          setModalVisible={setModalVisible}
+        />
       </ScrollView>
     </SafeAreaView>
   );
