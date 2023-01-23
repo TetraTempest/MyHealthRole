@@ -12,6 +12,11 @@ const Navigation = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator>
+      <Stack.Screen
+          name="CreateAppointment"
+          component={CreateAppointment}
+          options={{ header: () => null }}
+        />
         <Stack.Screen name="GetStarted" options={{ headerShown: false }}>
           {() => <GetStarted />}
         </Stack.Screen>
@@ -25,11 +30,7 @@ const Navigation = () => {
           options={{ header: () => null }}
         />
 
-        <Stack.Screen
-          name="CreateAppointment"
-          component={CreateAppointment}
-          options={{ header: () => null }}
-        />
+       
       </Stack.Navigator>
     </NavigationContainer>
   );
