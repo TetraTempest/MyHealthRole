@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   View,
   Text,
@@ -11,6 +11,9 @@ import {
 import { styles } from "../GlobalCSS";
 import { useNavigation } from "@react-navigation/native";
 import DropDownPickerComponent from "../components/DropDownPicker";
+import { getAllHospitals } from "../APIs";
+import { useDispatch } from "react-redux";
+import { setHospitales } from "../components/redux/reducers/hospitalReducers";
 
 const Login = () => {
   const navigation = useNavigation();
@@ -19,9 +22,23 @@ const Login = () => {
   const [nationalNumber, setNationalNumber] = useState("");
   const [value, setValue] = useState(null);
 
+  const dispatch = useDispatch();
+
+  const handelGetAllHospitals = () => {
+    getAllHospitals()
+      .then((res) => {
+        dispatch(setHospitales(res.data.hospitals));
+      })
+      .catch((err) => console.log(err));
+  };
+
+  useEffect(() => {
+    handelGetAllHospitals();
+  }, []);
+
   return (
     <SafeAreaView style={styles.container}>
-      <ScrollView nestedScrollEnabled={true}>
+      <ScrollView>
         <View>
           <Image
             style={styles.LogoImage}
