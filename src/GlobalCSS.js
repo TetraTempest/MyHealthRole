@@ -319,6 +319,107 @@ export const styles = StyleSheet.create({
     textAlign: "center",
   },
 
+  settingContainer: {
+    marginLeft: 20,
+    marginTop: 20,
+  },
+
+  settingHeader: {
+    fontSize: 25,
+    fontWeight: "bold",
+    color: "#343541",
+    marginTop: 20,
+    marginLeft: 25,
+  },
+
+  settingImage: {
+    borderRadius: 180,
+    width: 80,
+    height: 80,
+    borderWidth: 3,
+    borderColor: "#4B91F1",
+    
+  },
+
+  editContainer: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "flex-start",
+  },
+
+  editProfileBtn: {
+    width: "70%",
+    paddingLeft: 16,
+    paddingTop: 10,
+  },
+
+  profileName: {
+    fontSize: 20,
+    fontWeight: "bold",
+    color: "#343541",
+  },
+
+  editDetails: {
+    fontSize: 15,
+    fontWeight: "bold",
+  },
+
+  profileIcon: {
+    position: "relative",
+    bottom: 30,
+    alignItems: "flex-end",
+  },
+
+  profileNameContainer: {
+    position: "relative",
+    top: 10,
+  },
+
+  darkModeContainer: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    marginTop: 20,
+  },
+
+  darkMode: {
+    width: 35,
+    height: 35,
+    paddingTop: 2,
+    borderRadius: 20,
+    textAlign: "center",
+    alignItems: "center",
+    color: "#ffffff",
+    fontSize: 25
+  },
+
+  darkModeText: {
+    paddingTop: 8,
+    paddingRight: 60,
+    fontWeight: "bold",
+    fontSize: 15,
+    alignItems: "center",
+    justifyContent: "center"
+  },
+
+  switchDarkIcon: {
+    position: "relative",
+    bottom: 5,
+    paddingRight: 40
+  },
+
+  generalBtn: {
+    paddingTop: 10,
+  },
+
+  topicFont: {
+    fontSize: 15,
+    fontWeight: "bold"
+  },
+
+  topicMargin: {
+    marginTop: 20
+  },
+  
   ButtonGoBackContainer: {
     alignItems: "center",
     marginTop: 20,
