@@ -318,4 +318,35 @@ export const styles = StyleSheet.create({
     color: "red",
     textAlign: "center",
   },
+
+  ButtonGoBackContainer: {
+    alignItems: "center",
+    marginTop: 20,
+    marginHorizontal: 20,
+  },
+  IconContainer: {
+    backgroundColor: "white",
+    padding: 10,
+    paddingLeft: 15,
+    borderRadius: 100,
+    elevation: 5,
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 1,
+    shadowRadius: 2,
+    width: 40,
+    height: 40,
+  },
+
+  IconText: {
+    fontSize: 25,
+    color: "#000",
+    alignItems: "center",
+    textAlign: "center",
+  },
+
+  iconView: {
+    flex: 1,
+    alignItems: "center",
+  },
 });
