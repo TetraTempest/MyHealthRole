@@ -11,8 +11,9 @@ import React, { useState, useRef, useEffect } from "react";
 import { styles } from "../GlobalCSS";
 import MapView, { PROVIDER_GOOGLE, Marker } from "react-native-maps";
 import CloseModal from "../components/CloseModal";
+import GoBack from "../components/GoBack";
 
-const CreateAppointment = () => {
+const CreateAppointment = ({ navigation }) => {
   const [modalVisible, setModalVisible] = useState(false);
 
   const [appointoments, setAppointoments] = useState([
@@ -65,9 +66,7 @@ const CreateAppointment = () => {
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView nestedScrollEnabled={true}>
-        <View style={styles.hospitalsAppointmentStyle}>
-          <Text style={styles.hospitalsAppTopStyleText}>My Health Role</Text>
-        </View>
+        <GoBack text="My Health Role" navigation={navigation} />
         <View style={styles.mapContainer}>
           <MapView
             provider={PROVIDER_GOOGLE} // remove if not using Google Maps
